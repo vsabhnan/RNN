@@ -34,6 +34,9 @@ def text_to_seq(X_train, X_test):
     tokenizer = Tokenizer(num_words=max_words, oov_token="<OOV>")
     tokenizer.fit_on_texts(X_train)
 
+    total_vocab = len(tokenizer.word_index)
+    print(f"Total unique words in training set: {total_vocab}")
+
     # Convert text to sequences
     X_train_seq = tokenizer.texts_to_sequences(X_train)
     X_test_seq = tokenizer.texts_to_sequences(X_test)
