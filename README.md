@@ -7,3 +7,5 @@ The file main.py can be run to replicate the results in the report. It calls fun
 
 Expected run time is about an hour to an hour and a half. It will output all the results into “experiment_results”.csv. All charts are created within the formatted spreadsheet with results, which is available in the repository as “results_formatted.xlsx”.
 
+Requirements (python version and packages) are included in Requirements.txt.
+
