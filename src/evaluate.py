@@ -24,7 +24,7 @@ def run_iter(run_index, arch, activation, opt, grad, seq_length, datasets):
         sequence_length=seq_length
     )
 
-    acc, f1, t = train_record_results(
+    acc, f1, t, history = train_record_results(
         model,
         X_tr, y_tr,
         X_te, y_te,
@@ -33,3 +33,4 @@ def run_iter(run_index, arch, activation, opt, grad, seq_length, datasets):
     )
 
     print(f"{arch}: Acc={acc:.4f}, F1={f1:.4f}, Time/Epoch={t:.2f}s")
+    return history

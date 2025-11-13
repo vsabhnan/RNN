@@ -1,4 +1,4 @@
-import torch, random, numpy as np
+import random, numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, SimpleRNN, LSTM, Bidirectional, Dense, Dropout
@@ -16,7 +16,6 @@ def build_model(architecture="LSTM",
 
     # Set seed
     tf.random.set_seed(42)
-    torch.manual_seed(42)
     np.random.seed(42)
     random.seed(42)
 

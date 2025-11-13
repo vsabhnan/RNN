@@ -1,11 +1,11 @@
 import time
 import pandas as pd
 from sklearn.metrics import f1_score
-import torch, random, numpy as np
+import random, numpy as np
 import tensorflow as tf
 
 results = []  # stores metrics for all runs
-results_csv = "experiment_results.csv"
+results_csv = "results/experiment_results.csv"
 
 def train_record_results(model,
                          X_train, y_train,
@@ -16,7 +16,6 @@ def train_record_results(model,
 
     # Set seed
     tf.random.set_seed(42)
-    torch.manual_seed(42)
     np.random.seed(42)
     random.seed(42)
 
@@ -51,4 +50,4 @@ def train_record_results(model,
     df = pd.DataFrame(results)
     df.to_csv(results_csv, index=False)
 
-    return accuracy, f1_macro, train_time_per_epoch
+    return accuracy, f1_macro, train_time_per_epoch, history
